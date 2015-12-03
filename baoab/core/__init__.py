@@ -14,3 +14,10 @@
 #
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+r"""
+This module implements two versions of the BAOAB Langevin dynamics integrator.
+"""
+
+from baoab_ref import baoab_run as run_ref
+from baoab_opt import baoab_run as run_opt

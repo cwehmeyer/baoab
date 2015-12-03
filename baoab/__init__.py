@@ -15,6 +15,10 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+r"""
+This package implements the BAOAB Langevin dynamics integrator.
+"""
+
 from baoab import BAOAB
 from example import HarmonicPotential
 

@@ -16,17 +16,23 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 r"""
+The BAOAB Langevin dynamics integrator by B. Leimkuhler and C. Matthews.
 """
 
 from setuptools import setup
 import versioneer
 
+long_description = r"""
+This package provides a Python version of the BAOAB Langevin dynamics integrator by
+Benedict Leimkuhler and Charles Matthews.
+"""
+
 setup(
     cmdclass=versioneer.get_cmdclass(),
     name='baoab',
     version=versioneer.get_version(),
-    description='',
-    long_description='',
+    description='The BAOAB Langevin dynamics integrator by B. Leimkuhler and C. Matthews.',
+    long_description=long_description,
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Console',
@@ -44,7 +50,12 @@ setup(
         'Topic :: Scientific/Engineering :: Chemistry',
         'Topic :: Scientific/Engineering :: Mathematics',
         'Topic :: Scientific/Engineering :: Physics'],
-    keywords=[],
+    keywords=[
+        'BAOAB',
+        'Langevin dynamics',
+        'molecular dynamics',
+        'MD',
+        'NVT'],
     url='https://github.com/cwehmeyer/baoab',
     maintainer='Christoph Wehmeyer',
     maintainer_email='christoph.wehmeyer@fu-berlin.de',

@@ -15,6 +15,11 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+r"""
+This test module checks the outcome of the BAOAB Langevin dynamics integrator when applied
+to a 5D harmonic potential.
+"""
+
 import baoab
 import numpy as np
 from numpy.testing import assert_almost_equal

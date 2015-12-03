@@ -15,6 +15,10 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+r"""
+This module implements a slighty optimized version of the BAOAB Langevin dynamics integrator.
+"""
+
 import numpy as np
 
 def baoab_step(q0, p0, dth, factor_a, factor_b, hamiltonian):
