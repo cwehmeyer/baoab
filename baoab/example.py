@@ -20,8 +20,6 @@ This class implements a harmonic potential with arbitrary dimensionality which s
 example how to write Hamiltonian classes fur usage with BAOAB.
 """
 
-import numpy as np
-
 class HarmonicPotential(object):
     r"""Hamiltonian for a single particle in a harmonic potential"""
     def __init__(self, strength=1.0, mass=1.0):

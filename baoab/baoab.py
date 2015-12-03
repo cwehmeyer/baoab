@@ -22,7 +22,7 @@ This module implements a class for the BAOAB Langevin dynamics integrator.
 from core import run_ref
 from core import run_opt
 
-import numpy as np
+import numpy as _np
 
 class BAOAB(object):
     r"""This class implements the BAOAB Langevin dynamics integrator."""
@@ -62,8 +62,8 @@ class BAOAB(object):
         self.method = method
         # compute factors for optimized version
         self.dth = 0.5 * self.dt
-        self.factor_a = np.exp(-self.damping * self.dt)
-        self.factor_b = self.kt * (1.0 - np.exp(-2.0 * self.damping * self.dt))
+        self.factor_a = _np.exp(-self.damping * self.dt)
+        self.factor_b = self.kt * (1.0 - _np.exp(-2.0 * self.damping * self.dt))
         # compute derived values
         self.effective_dt = self.dt * self.skip
     def run(self, q0, p0, n_samples):
@@ -113,7 +113,7 @@ class BAOAB(object):
             trajectory of potential energies
 
         """
-        return np.array(
+        return _np.array(
             [self.hamiltonian.potential_energy(q_traj[i, :]) for i in range(q_traj.shape[0])])
     def ekin(self, p_traj):
         r"""
@@ -130,5 +130,5 @@ class BAOAB(object):
             trajectory of kinetic energies
 
         """
-        return np.array(
+        return _np.array(
             [self.hamiltonian.kinetic_energy(p_traj[i, :]) for i in range(p_traj.shape[0])])
