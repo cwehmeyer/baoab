@@ -19,5 +19,5 @@ r"""
 This module implements two versions of the BAOAB Langevin dynamics integrator.
 """
 
-from baoab_ref import baoab_run as run_ref
-from baoab_opt import baoab_run as run_opt
+from .baoab_ref import baoab_run as run_ref
+from .baoab_opt import baoab_run as run_opt

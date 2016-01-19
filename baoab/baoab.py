@@ -19,8 +19,8 @@ r"""
 This module implements a class for the BAOAB Langevin dynamics integrator.
 """
 
-from core import run_ref
-from core import run_opt
+from .core import run_ref
+from .core import run_opt
 
 import numpy as _np
 
