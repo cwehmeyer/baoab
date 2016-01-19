@@ -19,11 +19,11 @@ r"""
 This module implements a slighty optimized version of the BAOAB Langevin dynamics integrator.
 """
 
-import numpy as np
+import numpy as _np
 
 def baoab_run(n_samples, q0, p0, dth, factor_a, factor_b, hamiltonian, skip=1):
-    # factor_a = np.exp(-damping * dt)
-    # factor_b = kt * (1.0 - np.exp(-2.0 * damping * dt))
+    # factor_a = _np.exp(-damping * dt)
+    # factor_b = kt * (1.0 - _np.exp(-2.0 * damping * dt))
     q = []
     p = []
     q1 = q0.copy()
@@ -34,11 +34,11 @@ def baoab_run(n_samples, q0, p0, dth, factor_a, factor_b, hamiltonian, skip=1):
             p1 = p1 + dth * g1
             q1 = q1 - dth * p1 / hamiltonian.mass
             p1 = factor_a * p1 + \
-                np.sqrt(factor_b / hamiltonian.mass) * \
-                np.random.normal(size=p1.shape)
+                _np.sqrt(factor_b / hamiltonian.mass) * \
+                _np.random.normal(size=p1.shape)
             q1 = q1 - dth * p1 / hamiltonian.mass
             g1 = hamiltonian.potential_gradient(q1)
             p1 = p1 + dth * g1
         q.append(q1)
         p.append(p1)
-    return np.array(q), np.array(p)
+    return _np.array(q), _np.array(p)
